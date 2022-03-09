@@ -1,0 +1,14 @@
+<resources>
+    <string name="appName" translatable="false">STEIN</string>
+    <string name="txtVehicles">Por favor, informe a forma de locomoção:</string>
+    <string name="type1"><b>C</b>arro</string>
+    <string name="type2"><b>M</b>otocicleta</string>
+    <string name="type3"><b>C</b>aminhão</string>
+    <string name="type4"><b>A</b> pé</string>
+    <string name="interdictions">Interdições atuais</string>
+    <string name="noInterdictions">Não há interdições sendo feitas no momento</string>
+    <string name="origin">Origem</string>
+    <string name="destination">Destino</string>
+    <string name="btnSearch">Buscar</string>
+    <string name="btnList">Ver lista</string>
+</resources>
