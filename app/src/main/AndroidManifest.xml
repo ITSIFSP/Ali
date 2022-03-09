@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.here.infotransctd">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/appName"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Interdictions.InterdictionsList"
+            android:exported="false"
+            android:screenOrientation="fullSensor"/>
+        <meta-data
+            android:name="com.here.sdk.access_key_id"
+            android:value="K8kREOkIMCDEi47WAwEdNQ" />
+        <meta-data
+            android:name="com.here.sdk.access_key_secret"
+            android:value="r6pVWQK_7d_UgHWl0Re8Cz1_hW0yUpnj2opAC1dOTGk-wRQJec-zPyMEPHBbEFyDWbnzJuL63JSOsQ9hQ47Luw" />
+        <activity android:name=".MapsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.App.Starting"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".GPS.GPS_Service" />
+    </application>
+</manifest>
