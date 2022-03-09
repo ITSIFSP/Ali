@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "648507048604",
+    "project_id": "hereapp-a7be6",
+    "storage_bucket": "hereapp-a7be6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648507048604:android:97fc5300b6b20ef6062359",
+        "android_client_info": {
+          "package_name": "com.infotransctd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648507048604-9nsl2tlj4e7bg1gmsjlesfkeqael2jvm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_OUlnNvajJl6NOtDTZFQm1Grc-WkOOSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648507048604-9nsl2tlj4e7bg1gmsjlesfkeqael2jvm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
