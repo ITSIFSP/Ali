@@ -107,46 +107,49 @@ public class SearchExample
         searchEngine.search(new TextQuery(queryStringOrigin, mapView.getCamera().getBoundingBox()),
                 new SearchOptions(LanguageCode.PT_BR, 1), (searchError, list) ->
         {
-            if(list != null)
+            if (searchError != null)
             {
-                if (searchError != null)
+                if(flagOrigin == 0)
                 {
-                    if(flagOrigin == 0)
-                    {
-                        flagOrigin = 1;
-                        searchInViewport(queryStringDestination, queryStringOrigin);
-                    }
-                    else
-                    {
-                        if(flagOrigin == 2)
-                            RoutingExample.showDialog("Não foi possível calcular a rota",
-                                    "Por favor, confira o destino inserido " +
-                                            "e tente novamente", context);
-                        else RoutingExample.showDialog("Não foi possível calcular a rota",
-                                "Por favor, confira os locais inseridos e " +
-                                        "tente novamente", context);
-                        flagOrigin = 0;
-                    }
+                    flagOrigin = 1;
+                    searchInViewport(queryStringDestination, queryStringOrigin);
                 }
                 else
                 {
-                    switch(flagOrigin)
-                    {
-                        case 0:
+                    if(flagOrigin == 2)
+                        RoutingExample.showDialog("Não foi possível calcular a rota",
+                                "Por favor, confira o destino inserido " +
+                                        "e tente novamente", context);
+                    else RoutingExample.showDialog("Não foi possível calcular a rota",
+                            "Por favor, confira os locais inseridos e " +
+                                    "tente novamente", context);
+                    flagOrigin = 0;
+                }
+            }
+            else 
+            {
+                switch(flagOrigin)
+                {
+                    case 0:
+                        if(list != null)
+                        {    
                             origin = list.get(0).getGeoCoordinates();
                             metadataOrigin.setCustomValue("key_search_result",
                                     new SearchResultMetadata(list.get(0)));
                             flagOrigin = 2;
                             searchInViewport(queryStringDestination, queryStringOrigin);
-                            return;
-                        case 1:
-                            RoutingExample.showDialog("Não foi possível calcular a rota",
-                                    "Por favor, confira a origem inserida e " +
-                                            "tente novamente",
-                                    context);
-                            flagOrigin = 0;
-                            return;
-                        default:
+                        }    
+                        return;
+                    case 1:
+                        RoutingExample.showDialog("Não foi possível calcular a rota",
+                                "Por favor, confira a origem inserida e " +
+                                        "tente novamente",
+                                context);
+                        flagOrigin = 0;
+                        return;
+                    default:
+                        if(list != null)
+                        {
                             destination = list.get(0).getGeoCoordinates();
                             Metadata metadataDestination = new Metadata();
                             metadataDestination.setCustomValue("key_search_result",
@@ -154,7 +157,7 @@ public class SearchExample
                             routingExample.addRoute(meanOfTransport, origin, destination,
                                     metadataOrigin, metadataDestination);
                             flagOrigin = 0;
-                    }
+                        }
                 }
             }
         });
