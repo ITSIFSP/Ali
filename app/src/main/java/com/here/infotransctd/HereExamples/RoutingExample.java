@@ -87,6 +87,10 @@ public class RoutingExample
         for (MapPolyline mapPolyline : mapPolylinesUser)
             mapView.getMapScene().removeMapPolyline(mapPolyline);
         mapPolylinesUser.clear();
+        searchExample.addPoiMapMarker(startGeoCoordinates, metadataOrigin,
+            mapMarkerListUser, context, mapView);
+        searchExample.addPoiMapMarker(destinationGeoCoordinates,
+            metadataDestination, mapMarkerListUser, context, mapView);
         List<Waypoint> waypoints = new ArrayList<>(Arrays.asList(new Waypoint(startGeoCoordinates),
                 new Waypoint(destinationGeoCoordinates)));
         switch(meanOfTransport)
@@ -161,8 +165,14 @@ public class RoutingExample
                 showRouteOnMap(routes.get(0), true,true);
             }
         }
-        else showDialog("Não foi possível obter a rota", "Erro: " + routingError,
+        else 
+        {
+            for (MapMarker mapMarker : mapMarkerListUser)
+            mapView.getMapScene().removeMapMarker(mapMarker);
+            mapMarkerListUser.clear();
+            showDialog("Não foi possível obter a rota", "Erro: " + routingError,
                 context);
+        }
     }
 
     private String formatTime(long sec)
@@ -193,10 +203,6 @@ public class RoutingExample
         MapPolylineStyle mapPolylineStyle = new MapPolylineStyle();
         if (!interdiction)
         {
-            searchExample.addPoiMapMarker(startGeoCoordinates, metadataOrigin,
-                mapMarkerListUser, context, mapView);
-            searchExample.addPoiMapMarker(destinationGeoCoordinates,
-                metadataDestination, mapMarkerListUser, context, mapView);
             if(blue) mapPolylineStyle.setColor(0x00908AA0, PixelFormat.RGBA_8888);
             else mapPolylineStyle.setColor(0x900080A0, PixelFormat.RGBA_8888);
         }
