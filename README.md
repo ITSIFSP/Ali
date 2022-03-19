@@ -1,11 +1,11 @@
-# STEIN App
+# ALI
 Esse repositório contém o aplicativo utilizado para a coleta de dados dos usuários e 
-que mostra as interdições da cidade de Catanduva-SP para os usuários.
+que mostra as interdições para os usuários.
 
 Para que serve?
-- STEIN sugere rotas e mostra as interdições que estão sendo feitas na cidade, permitindo, assim,
+- ALI sugere rotas e mostra as interdições que estão sendo feitas na cidade, permitindo, assim,
 escolher o melhor trajeto.
-- Ao usar o STEIN, sua localização e a forma de locomoção usada são armazenadas num banco de dados.
+- Ao usar o ALI, sua localização e a forma de locomoção usada são armazenadas num banco de dados.
 Nenhuma outra informação pessoal além dessas serão coletadas.
 - Para isso, é preciso estar com GPS e internet ligados.
 
@@ -26,13 +26,13 @@ Note que a rota pode passar pelas interdições, sendo ela apenas uma sugestão.
 Escolha um trajeto que as evite.
 - Enquanto estiver se deslocando para o destino, a tela do dispositivo pode ser desligada e
 outros aplicativos podem ser usados em primeiro plano.
-Por gentileza, não feche o STEIN enquanto se dirige ao destino, 
+Por gentileza, não feche o ALI enquanto se dirige ao destino, 
 pois nesse momento os dados serão coletados.
 - Tocando no olho, pode-se ver todas as interdições atuais.
 
 ## Instalação
 
-- Clonar o projeto com o comando: git clone https://github.com/ITSIFSP/HereSteinApp
+- Clonar o projeto com o comando: git clone https://github.com/ITSIFSP/Ali
 - Abrir o projeto com a IDE Android Studio
 - Atualizar as dependências do arquivo Gradle
 - Para instalar o aplicativo, utilizar um celular ou emulador com Android.
