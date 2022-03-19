@@ -1,5 +1,5 @@
 <resources>
-    <string name="appName" translatable="false">STEIN</string>
+    <string name="appName" translatable="false">ALI</string>
     <string name="txtVehicles">Por favor, informe a forma de locomoção:</string>
     <string name="type1"><b>C</b>arro</string>
     <string name="type2"><b>M</b>otocicleta</string>
